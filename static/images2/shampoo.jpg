@@ -1,0 +1,349 @@
+mat
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+msgid "Many-to-many relationship"
+msgstr "Darempred lies-ouzh-lies"
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the
+#. label
+msgid ":?.!"
+msgstr ""
+
+msgid "This field is required."
+msgstr "Rekis eo leuniañ ar vaezienn."
+
+msgid "Enter a whole number."
+msgstr "Merkit un niver anterin."
+
+msgid "Enter a valid date."
+msgstr "Merkit un deiziad reizh"
+
+msgid "Enter a valid time."
+msgstr "Merkit un eur reizh"
+
+msgid "Enter a valid date/time."
+msgstr "Merkit un eur/deiziad reizh"
+
+msgid "Enter a valid duration."
+msgstr ""
+
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "N'eus ket kaset restr ebet. Gwiriit ar seurt enkodañ evit ar restr"
+
+msgid "No file was submitted."
+msgstr "N'eus bet kaset restr ebet."
+
+msgid "The submitted file is empty."
+msgstr "Goullo eo ar restr kaset."
+
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr "Kasit ur restr pe askit al log riñsañ; an eil pe egile"
+
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"Enpozhiit ur skeudenn reizh. Ar seurt bet enporzhiet ganeoc'h a oa foeltret "
+"pe ne oa ket ur skeudenn"
+
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "Dizuit un dibab reizh. %(value)s n'emañ ket e-touez an dibaboù posupl."
+
+msgid "Enter a list of values."
+msgstr "Merkit ur roll talvoudoù"
+
+msgid "Enter a complete value."
+msgstr "Merkañ un talvoud klok"
+
+msgid "Enter a valid UUID."
+msgstr ""
+
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+msgid ":"
+msgstr ""
+
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#, python-format
+msgid "Please submit at most %d form."
+msgid_plural "Please submit at most %d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+#, python-format
+msgid "Please submit at least %d form."
+msgid_plural "Please submit at least %d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+
+msgid "Order"
+msgstr "Urzh"
+
+msgid "Delete"
+msgstr "Diverkañ"
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Reizhit ar roadennoù e doubl e %(field)s."
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+"Reizhit ar roadennoù e doubl e %(field)s, na zle bezañ enni nemet talvoudoù "
+"dzho o-unan."
+
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Reizhit ar roadennoù e doubl e %(field_name)s a rank bezañ ennañ talvodoù en "
+"o-unan evit lodenn %(lookup)s %(date_field)s."
+
+msgid "Please correct the duplicate values below."
+msgstr "Reizhañ ar roadennoù e doubl zo a-is"
+
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "Diuzit un dibab reizh. N'emañ ket an dibab-mañ e-touez ar re bosupl."
+
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+msgid "Clear"
+msgstr "Riñsañ"
+
+msgid "Currently"
+msgstr "Evit ar mare"
+
+msgid "Change"
+msgstr "Kemmañ"
+
+msgid "Unknown"
+msgstr "Dianav"
+
+msgid "Yes"
+msgstr "Ya"
+
+msgid "No"
+msgstr "Ket"
+
+#. Translators: Please do not add spaces around commas.
+msgid "yes,no,maybe"
+msgstr "ya,ket,marteze"
+
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] "%(size)d okted"
+msgstr[1] "%(size)d okted"
+msgstr[2] "%(size)d okted"
+msgstr[3] "%(size)d okted"
+msgstr[4] "%(size)d okted"
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "p.m."
+msgstr "g.m."
+
+msgid "a.m."
+msgstr "mintin"
+
+msgid "PM"
+msgstr "G.M."
+
+msgid "AM"
+msgstr "Mintin"
+
+msgid "midnight"
+msgstr "hanternoz"
+
+msgid "noon"
+msgstr "kreisteiz"
+
+msgid "Monday"
+msgstr "Lun"
+
+msgid "Tuesday"
+msgstr "Meurzh"
+
+msgid "Wednesday"
+msgstr "Merc'her"
+
+msgid "Thursday"
+msgstr "Yaou"
+
+msgid "Friday"
+msgstr "Gwener"
+
+msgid "Saturday"
+msgstr "Sadorn"
+
+msgid "Sunday"
+msgstr "Sul"
+
+msgid "Mon"
+msgstr "Lun"
+
+msgid "Tue"
+msgstr "Meu"
+
+msgid "Wed"
+msgstr "Mer"
+
+msgid "Thu"
+msgstr "Yao"
+
+msgid "Fri"
+msgstr "Gwe"
+
+msgid "Sat"
+msgstr "Sad"
+
+msgid "Sun"
+msgstr "Sul"
+
+msgid "January"
+msgstr "Genver"
+
+msgid "February"
+msgstr "C'hwevrer"
+
+msgid "March"
+msgstr "Meurzh"
+
+msgid "April"
+msgstr "Ebrel"
+
+msgid "May"
+msgstr "Mae"
+
+msgid "June"
+msgstr "Mezheven"
+
+msgid "July"
+msgstr "Gouere"
+
+msgid "August"
+msgstr "Eost"
+
+msgid "September"
+msgstr "Gwengolo"
+
+msgid "October"
+msgstr "Here"
+
+msgid "November"
+msgstr "Du"
+
+msgid "December"
+msgstr "Kerzu"
+
+msgid "jan"
+msgstr "Gen"
+
+msgid "feb"
+msgstr "C'hwe"
+
+msgid "mar"
+msgstr "Meu"
+
+msgid "apr"
+msgstr "Ebr"
+
+msgid "may"
+msgstr "Mae"
+
+msgid "jun"
+msgstr "Mez"
+
+msgid "jul"
+msgstr "Gou"
+
+msgid "aug"
+msgstr "Eos"
+
+msgid "sep"
+msgstr "Gwe"
+
+msgid "oct"
+msgstr "Her"
+
+msgid "nov"
+msgstr "Du"
+
+msgid "dec"
+msgstr "Kzu"
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Gen."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "C'hwe."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "M

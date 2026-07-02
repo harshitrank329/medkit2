@@ -1,0 +1,447 @@
+# This file is distributed under the same license as the Django package.
+#
+# Translators:
+# Antoni Aloy <aaloy@apsl.net>, 2012,2015-2017,2021-2022
+# Carles Barrobés <carles@barrobes.com>, 2011-2012,2014,2020
+# duub qnnp, 2015
+# Emilio Carrion, 2022
+# Gil Obradors Via <gil.obradors@gmail.com>, 2019
+# Gil Obradors Via <gil.obradors@gmail.com>, 2019
+# Jannis Leidel <jannis@leidel.info>, 2011
+# Manel Clos <manelclos@gmail.com>, 2020
+# Manuel Miranda <manu.mirandad@gmail.com>, 2015
+# Mariusz Felisiak <felisiak.mariusz@gmail.com>, 2021
+# Roger Pons <rogerpons@gmail.com>, 2015
+# Santiago Lamora <santiago@ribaguifi.com>, 2020
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-17 05:23-0500\n"
+"PO-Revision-Date: 2022-07-25 06:49+0000\n"
+"Last-Translator: Emilio Carrion\n"
+"Language-Team: Catalan (http://www.transifex.com/django/django/language/"
+"ca/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ca\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Afrikaans"
+msgstr "Afrikans"
+
+msgid "Arabic"
+msgstr "àrab"
+
+msgid "Algerian Arabic"
+msgstr "àrab argelià"
+
+msgid "Asturian"
+msgstr "Asturià"
+
+msgid "Azerbaijani"
+msgstr "azerbaijanès"
+
+msgid "Bulgarian"
+msgstr "búlgar"
+
+msgid "Belarusian"
+msgstr "Bielorús"
+
+msgid "Bengali"
+msgstr "bengalí"
+
+msgid "Breton"
+msgstr "Bretó"
+
+msgid "Bosnian"
+msgstr "bosnià"
+
+msgid "Catalan"
+msgstr "català"
+
+msgid "Czech"
+msgstr "txec"
+
+msgid "Welsh"
+msgstr "gal·lès"
+
+msgid "Danish"
+msgstr "danès"
+
+msgid "German"
+msgstr "alemany"
+
+msgid "Lower Sorbian"
+msgstr "baix serbi"
+
+msgid "Greek"
+msgstr "grec"
+
+msgid "English"
+msgstr "anglès"
+
+msgid "Australian English"
+msgstr "Anglès d'Austràlia"
+
+msgid "British English"
+msgstr "anglès britànic"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Spanish"
+msgstr "castellà"
+
+msgid "Argentinian Spanish"
+msgstr "castellà d'Argentina"
+
+msgid "Colombian Spanish"
+msgstr "castellà de Colombia"
+
+msgid "Mexican Spanish"
+msgstr "castellà de Mèxic"
+
+msgid "Nicaraguan Spanish"
+msgstr "castellà de Nicaragua"
+
+msgid "Venezuelan Spanish"
+msgstr "castellà de Veneçuela"
+
+msgid "Estonian"
+msgstr "estonià"
+
+msgid "Basque"
+msgstr "èuscar"
+
+msgid "Persian"
+msgstr "persa"
+
+msgid "Finnish"
+msgstr "finlandès"
+
+msgid "French"
+msgstr "francès"
+
+msgid "Frisian"
+msgstr "frisi"
+
+msgid "Irish"
+msgstr "irlandès"
+
+msgid "Scottish Gaelic"
+msgstr "Gaèlic escocès"
+
+msgid "Galician"
+msgstr "gallec"
+
+msgid "Hebrew"
+msgstr "hebreu"
+
+msgid "Hindi"
+msgstr "hindi"
+
+msgid "Croatian"
+msgstr "croat"
+
+msgid "Upper Sorbian"
+msgstr "alt serbi"
+
+msgid "Hungarian"
+msgstr "hongarès"
+
+msgid "Armenian"
+msgstr "Armeni"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Indonesian"
+msgstr "indonesi"
+
+msgid "Igbo"
+msgstr "lgbo"
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Icelandic"
+msgstr "islandès"
+
+msgid "Italian"
+msgstr "italià"
+
+msgid "Japanese"
+msgstr "japonès"
+
+msgid "Georgian"
+msgstr "georgià"
+
+msgid "Kabyle"
+msgstr "Cabilenc"
+
+msgid "Kazakh"
+msgstr "Kazakh"
+
+msgid "Khmer"
+msgstr "khmer"
+
+msgid "Kannada"
+msgstr "kannarès"
+
+msgid "Korean"
+msgstr "coreà"
+
+msgid "Kyrgyz"
+msgstr "Kyrgyz"
+
+msgid "Luxembourgish"
+msgstr "Luxemburguès"
+
+msgid "Lithuanian"
+msgstr "lituà"
+
+msgid "Latvian"
+msgstr "letó"
+
+msgid "Macedonian"
+msgstr "macedoni"
+
+msgid "Malayalam"
+msgstr "malaiàlam "
+
+msgid "Mongolian"
+msgstr "mongol"
+
+msgid "Marathi"
+msgstr "Maratí"
+
+msgid "Malay"
+msgstr "Malai"
+
+msgid "Burmese"
+msgstr "Burmès"
+
+msgid "Norwegian Bokmål"
+msgstr "Bokmål noruec"
+
+msgid "Nepali"
+msgstr "nepalès"
+
+msgid "Dutch"
+msgstr "holandès"
+
+msgid "Norwegian Nynorsk"
+msgstr "noruec nynorsk"
+
+msgid "Ossetic"
+msgstr "ossètic"
+
+msgid "Punjabi"
+msgstr "panjabi"
+
+msgid "Polish"
+msgstr "polonès"
+
+msgid "Portuguese"
+msgstr "portuguès"
+
+msgid "Brazilian Portuguese"
+msgstr "portuguès de brasil"
+
+msgid "Romanian"
+msgstr "romanès"
+
+msgid "Russian"
+msgstr "rus"
+
+msgid "Slovak"
+msgstr "eslovac"
+
+msgid "Slovenian"
+msgstr "eslovè"
+
+msgid "Albanian"
+msgstr "albanès"
+
+msgid "Serbian"
+msgstr "serbi"
+
+msgid "Serbian Latin"
+msgstr "serbi llatí"
+
+msgid "Swedish"
+msgstr "suec"
+
+msgid "Swahili"
+msgstr "Swahili"
+
+msgid "Tamil"
+msgstr "tàmil"
+
+msgid "Telugu"
+msgstr "telugu"
+
+msgid "Tajik"
+msgstr "Tajik"
+
+msgid "Thai"
+msgstr "tailandès"
+
+msgid "Turkmen"
+msgstr "Turkmen"
+
+msgid "Turkish"
+msgstr "turc"
+
+msgid "Tatar"
+msgstr "Tatar"
+
+msgid "Udmurt"
+msgstr "Udmurt"
+
+msgid "Ukrainian"
+msgstr "ucraïnès"
+
+msgid "Urdu"
+msgstr "urdu"
+
+msgid "Uzbek"
+msgstr "Uzbek"
+
+msgid "Vietnamese"
+msgstr "vietnamita"
+
+msgid "Simplified Chinese"
+msgstr "xinès simplificat"
+
+msgid "Traditional Chinese"
+msgstr "xinès tradicional"
+
+msgid "Messages"
+msgstr "Missatges"
+
+msgid "Site Maps"
+msgstr "Mapes del lloc"
+
+msgid "Static Files"
+msgstr "Arxius estàtics"
+
+msgid "Syndication"
+msgstr "Sindicació"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+msgid "…"
+msgstr "..."
+
+msgid "That page number is not an integer"
+msgstr "Aquest número de plana no és un enter"
+
+msgid "That page number is less than 1"
+msgstr "El nombre de plana és inferior a 1"
+
+msgid "That page contains no results"
+msgstr "La plana no conté cap resultat"
+
+msgid "Enter a valid value."
+msgstr "Introduïu un valor vàlid."
+
+msgid "Enter a valid URL."
+msgstr "Introduïu una URL vàlida."
+
+msgid "Enter a valid integer."
+msgstr "Introduïu un enter vàlid."
+
+msgid "Enter a valid email address."
+msgstr "Introdueix una adreça de correu electrònic vàlida"
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+"Introduïu un 'slug' vàlid, consistent en lletres, números, guions o guions "
+"baixos."
+
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+"Introduïu un 'slug' vàlid format per lletres Unicode, números, guions o "
+"guions baixos."
+
+msgid "Enter a valid IPv4 address."
+msgstr "Introduïu una adreça IPv4 vàlida."
+
+msgid "Enter a valid IPv6 address."
+msgstr "Entreu una adreça IPv6 vàlida."
+
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr "Entreu una adreça IPv4 o IPv6 vàlida."
+
+msgid "Enter only digits separated by commas."
+msgstr "Introduïu només dígits separats per comes."
+
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+"Assegureu-vos que aquest valor sigui %(limit_value)s (és %(show_value)s)."
+
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+"Assegureu-vos que aquest valor sigui menor o igual que %(limit_value)s."
+
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+"Assegureu-vos que aquest valor sigui més gran o igual que %(limit_value)s."
+
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+" \n"
+"Asseguri's que aquest valor sigui un múltiple de %(limit_value)s."
+
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Assegureu-vos que aquest valor té almenys %(limit_value)d caràcter (en té "
+"%(show_value)d)."
+msgstr[1] ""
+"Assegureu-vos que el valor tingui almenys %(limit_value)d caràcters (en té "
+"%(show_value)d)."
+
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+"Assegureu-vos que aquest valor té com a molt %(limit_value)d caràcter (en té "
+"%(show_value)d)."
+msgstr[1] ""
+"Assegureu-vos que aquest valor tingui com a molt %(limit_value)d caràcters "
+"(en té %(show_value)d)."
+
+msgid "Enter a number."
+msgstr "Introduïu un número."
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] "Assegureu-vos que no hi ha més de %(max)s dígit en total."
+msgstr[1] "Assegureu-vos que no hi hagi més de %(max)s dígits en total."
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] "Assegureu-vos que no hi ha més de %(max)

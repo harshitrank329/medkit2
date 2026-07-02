@@ -1,0 +1,211 @@
+য়  True, False অথবা None)"
+
+msgid "Positive integer"
+msgstr "পজিটিভ ইন্টিজার"
+
+msgid "Positive small integer"
+msgstr "পজিটিভ স্মল ইন্টিজার"
+
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr "স্লাগ (সর্বোচ্চ %(max_length)s)"
+
+msgid "Small integer"
+msgstr "স্মল ইন্টিজার"
+
+msgid "Text"
+msgstr "টেক্সট"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+msgid "Time"
+msgstr "সময়"
+
+msgid "URL"
+msgstr "ইউআরএল (URL)"
+
+msgid "Raw binary data"
+msgstr "র বাইনারি ডাটা"
+
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+msgid "Universally unique identifier"
+msgstr ""
+
+msgid "File"
+msgstr "ফাইল"
+
+msgid "Image"
+msgstr "ইমেজ"
+
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+msgid "Foreign Key (type determined by related field)"
+msgstr "ফরেন কি (টাইপ রিলেটেড ফিল্ড দ্বারা নির্ণীত হবে)"
+
+msgid "One-to-one relationship"
+msgstr "ওয়ান-টু-ওয়ান রিলেশানশিপ"
+
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+msgid "Many-to-many relationship"
+msgstr "ম্যানি-টু-ম্যানি রিলেশানশিপ"
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the
+#. label
+msgid ":?.!"
+msgstr ""
+
+msgid "This field is required."
+msgstr "এটি আবশ্যক।"
+
+msgid "Enter a whole number."
+msgstr "একটি পূর্ণসংখ্যা দিন"
+
+msgid "Enter a valid date."
+msgstr "বৈধ তারিখ দিন।"
+
+msgid "Enter a valid time."
+msgstr "বৈধ সময় দিন।"
+
+msgid "Enter a valid date/time."
+msgstr "বৈধ তারিখ/সময় দিন।"
+
+msgid "Enter a valid duration."
+msgstr ""
+
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr "কোন ফাইল দেয়া হয়নি। ফর্মের এনকোডিং ঠিক আছে কিনা দেখুন।"
+
+msgid "No file was submitted."
+msgstr "কোন ফাইল দেয়া হয়নি।"
+
+msgid "The submitted file is empty."
+msgstr "ফাইলটি খালি।"
+
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+"একটি ফাইল সাবমিট করুন অথবা ক্লিয়ার চেকবক্সটি চেক করে দিন, যে কোন একটি করুন।"
+
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"সঠিক ছবি আপলোড করুন। যে ফাইলটি আপলোড করা হয়েছে তা হয় ছবি নয় অথবা নষ্ট হয়ে "
+"যাওয়া ছবি।"
+
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr "%(value)s বৈধ নয়। অনুগ্রহ করে আরেকটি সিলেক্ট করুন।"
+
+msgid "Enter a list of values."
+msgstr "কয়েকটি মানের তালিকা দিন।"
+
+msgid "Enter a complete value."
+msgstr ""
+
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+msgid ":"
+msgstr ""
+
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Order"
+msgstr "ক্রম"
+
+msgid "Delete"
+msgstr "মুছুন"
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr "এটি বৈধ নয়। অনুগ্রহ করে আরেকটি সিলেক্ট করুন।"
+
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+msgid "Clear"
+msgstr "পরিষ্কার করুন"
+
+msgid "Currently"
+msgstr "এই মুহুর্তে"
+
+msgid "Change"
+msgstr

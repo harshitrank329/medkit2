@@ -1,0 +1,529 @@
+# This file is distributed under the same license as the Django package.
+#
+# Translators:
+# Jannis Leidel <jannis@leidel.info>, 2011
+# M Nasimul Haque <nasim.haque@gmail.com>, 2013
+# Tahmid Rafi <rafi.tahmid@gmail.com>, 2012-2013
+# Tahmid Rafi <rafi.tahmid@gmail.com>, 2013
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-27 22:40+0200\n"
+"PO-Revision-Date: 2019-11-05 00:38+0000\n"
+"Last-Translator: Ramiro Morales\n"
+"Language-Team: Bengali (http://www.transifex.com/django/django/language/"
+"bn/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: bn\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Afrikaans"
+msgstr "আফ্রিকার অন্যতম সরকারি ভাষা"
+
+msgid "Arabic"
+msgstr "আরবী"
+
+msgid "Asturian"
+msgstr ""
+
+msgid "Azerbaijani"
+msgstr "আজারবাইজানি"
+
+msgid "Bulgarian"
+msgstr "বুলগেরিয়ান"
+
+msgid "Belarusian"
+msgstr "বেলারুশীয়"
+
+msgid "Bengali"
+msgstr "বাংলা"
+
+msgid "Breton"
+msgstr "ব্রেটন"
+
+msgid "Bosnian"
+msgstr "বসনিয়ান"
+
+msgid "Catalan"
+msgstr "ক্যাটালান"
+
+msgid "Czech"
+msgstr "চেক"
+
+msgid "Welsh"
+msgstr "ওয়েল্স"
+
+msgid "Danish"
+msgstr "ড্যানিশ"
+
+msgid "German"
+msgstr "জার্মান"
+
+msgid "Lower Sorbian"
+msgstr ""
+
+msgid "Greek"
+msgstr "গ্রিক"
+
+msgid "English"
+msgstr "ইংলিশ"
+
+msgid "Australian English"
+msgstr ""
+
+msgid "British English"
+msgstr "বৃটিশ ইংলিশ"
+
+msgid "Esperanto"
+msgstr "আন্তর্জাতিক ভাষা"
+
+msgid "Spanish"
+msgstr "স্প্যানিশ"
+
+msgid "Argentinian Spanish"
+msgstr "আর্জেন্টিনিয়ান স্প্যানিশ"
+
+msgid "Colombian Spanish"
+msgstr ""
+
+msgid "Mexican Spanish"
+msgstr "মেক্সিকান স্প্যানিশ"
+
+msgid "Nicaraguan Spanish"
+msgstr "নিকারাগুয়ান স্প্যানিশ"
+
+msgid "Venezuelan Spanish"
+msgstr "ভেনেজুয়েলার স্প্যানিশ"
+
+msgid "Estonian"
+msgstr "এস্তোনিয়ান"
+
+msgid "Basque"
+msgstr "বাস্ক"
+
+msgid "Persian"
+msgstr "ফারসি"
+
+msgid "Finnish"
+msgstr "ফিনিশ"
+
+msgid "French"
+msgstr "ফ্রেঞ্চ"
+
+msgid "Frisian"
+msgstr "ফ্রিজ্ল্যানডের ভাষা"
+
+msgid "Irish"
+msgstr "আইরিশ"
+
+msgid "Scottish Gaelic"
+msgstr ""
+
+msgid "Galician"
+msgstr "গ্যালিসিয়ান"
+
+msgid "Hebrew"
+msgstr "হিব্রু"
+
+msgid "Hindi"
+msgstr "হিন্দী"
+
+msgid "Croatian"
+msgstr "ক্রোয়েশিয়ান"
+
+msgid "Upper Sorbian"
+msgstr ""
+
+msgid "Hungarian"
+msgstr "হাঙ্গেরিয়ান"
+
+msgid "Armenian"
+msgstr ""
+
+msgid "Interlingua"
+msgstr ""
+
+msgid "Indonesian"
+msgstr "ইন্দোনেশিয়ান"
+
+msgid "Ido"
+msgstr ""
+
+msgid "Icelandic"
+msgstr "আইসল্যান্ডিক"
+
+msgid "Italian"
+msgstr "ইটালিয়ান"
+
+msgid "Japanese"
+msgstr "জাপানিজ"
+
+msgid "Georgian"
+msgstr "জর্জিয়ান"
+
+msgid "Kabyle"
+msgstr ""
+
+msgid "Kazakh"
+msgstr "কাজাখ"
+
+msgid "Khmer"
+msgstr "খমার"
+
+msgid "Kannada"
+msgstr "কান্নাড়া"
+
+msgid "Korean"
+msgstr "কোরিয়ান"
+
+msgid "Luxembourgish"
+msgstr "লুক্সেমবার্গীয়"
+
+msgid "Lithuanian"
+msgstr "লিথুয়ানিয়ান"
+
+msgid "Latvian"
+msgstr "লাটভিয়ান"
+
+msgid "Macedonian"
+msgstr "ম্যাসাডোনিয়ান"
+
+msgid "Malayalam"
+msgstr "মালায়ালম"
+
+msgid "Mongolian"
+msgstr "মঙ্গোলিয়ান"
+
+msgid "Marathi"
+msgstr ""
+
+msgid "Burmese"
+msgstr "বার্মিজ"
+
+msgid "Norwegian Bokmål"
+msgstr ""
+
+msgid "Nepali"
+msgstr "নেপালি"
+
+msgid "Dutch"
+msgstr "ডাচ"
+
+msgid "Norwegian Nynorsk"
+msgstr "নরওয়েজীয়ান নিনর্স্ক"
+
+msgid "Ossetic"
+msgstr "অসেটিক"
+
+msgid "Punjabi"
+msgstr "পাঞ্জাবী"
+
+msgid "Polish"
+msgstr "পোলিশ"
+
+msgid "Portuguese"
+msgstr "পর্তুগীজ"
+
+msgid "Brazilian Portuguese"
+msgstr "ব্রাজিলিয়ান পর্তুগীজ"
+
+msgid "Romanian"
+msgstr "রোমানিয়ান"
+
+msgid "Russian"
+msgstr "রাশান"
+
+msgid "Slovak"
+msgstr "স্লোভাক"
+
+msgid "Slovenian"
+msgstr "স্লোভেনিয়ান"
+
+msgid "Albanian"
+msgstr "আলবেনীয়ান"
+
+msgid "Serbian"
+msgstr "সার্বিয়ান"
+
+msgid "Serbian Latin"
+msgstr "সার্বিয়ান ল্যাটিন"
+
+msgid "Swedish"
+msgstr "সুইডিশ"
+
+msgid "Swahili"
+msgstr "সোয়াহিলি"
+
+msgid "Tamil"
+msgstr "তামিল"
+
+msgid "Telugu"
+msgstr "তেলেগু"
+
+msgid "Thai"
+msgstr "থাই"
+
+msgid "Turkish"
+msgstr "তুর্কি"
+
+msgid "Tatar"
+msgstr "তাতারদেশীয়"
+
+msgid "Udmurt"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr "ইউক্রেনিয়ান"
+
+msgid "Urdu"
+msgstr "উর্দু"
+
+msgid "Uzbek"
+msgstr ""
+
+msgid "Vietnamese"
+msgstr "ভিয়েতনামিজ"
+
+msgid "Simplified Chinese"
+msgstr "সরলীকৃত চাইনীজ"
+
+msgid "Traditional Chinese"
+msgstr "প্রচলিত চাইনীজ"
+
+msgid "Messages"
+msgstr ""
+
+msgid "Site Maps"
+msgstr ""
+
+msgid "Static Files"
+msgstr ""
+
+msgid "Syndication"
+msgstr ""
+
+msgid "That page number is not an integer"
+msgstr ""
+
+msgid "That page number is less than 1"
+msgstr ""
+
+msgid "That page contains no results"
+msgstr ""
+
+msgid "Enter a valid value."
+msgstr "একটি বৈধ মান দিন।"
+
+msgid "Enter a valid URL."
+msgstr "বৈধ URL দিন"
+
+msgid "Enter a valid integer."
+msgstr ""
+
+msgid "Enter a valid email address."
+msgstr "একটি বৈধ ইমেইল ঠিকানা লিখুন."
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+msgid "Enter a valid IPv4 address."
+msgstr "একটি বৈধ IPv4 ঠিকানা দিন।"
+
+msgid "Enter a valid IPv6 address."
+msgstr "একটি বৈধ IPv6 ঠিকানা টাইপ করুন।"
+
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr "একটি বৈধ IPv4 অথবা IPv6 ঠিকানা টাইপ করুন।"
+
+msgid "Enter only digits separated by commas."
+msgstr "শুধুমাত্র কমা দিয়ে সংখ্যা দিন।"
+
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr "সংখ্যাটির মান %(limit_value)s হতে হবে (এটা এখন %(show_value)s আছে)।"
+
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr "সংখ্যাটির মান %(limit_value)s এর চেয়ে ছোট বা সমান হতে হবে।"
+
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr "সংখ্যাটির মান %(limit_value)s এর চেয়ে বড় বা সমান হতে হবে।"
+
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Enter a number."
+msgstr "একটি সংখ্যা প্রবেশ করান।"
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+msgid "Null characters are not allowed."
+msgstr ""
+
+msgid "and"
+msgstr "এবং"
+
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+msgid "This field cannot be null."
+msgstr "এর মান null হতে পারবে না।"
+
+msgid "This field cannot be blank."
+msgstr "এই ফিল্ডের মান ফাঁকা হতে পারে না"
+
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr "%(field_label)s সহ %(model_name)s আরেকটি রয়েছে।"
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
+#. Eg: "Title must be unique for pub_date year"
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr "ফিল্ডের ধরণ: %(field_type)s"
+
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+msgid "Boolean (Either True or False)"
+msgstr "বুলিয়ান (হয় True অথবা False)"
+
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr "স্ট্রিং (সর্বোচ্চ %(max_length)s)"
+
+msgid "Comma-separated integers"
+msgstr "কমা দিয়ে আলাদা করা ইন্টিজার"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+msgid "Date (without time)"
+msgstr "তারিখ (সময় বাদে)"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+msgid "Date (with time)"
+msgstr "তারিখ (সময় সহ)"
+
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+msgid "Decimal number"
+msgstr "দশমিক সংখ্যা"
+
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "Email address"
+msgstr "ইমেইল ঠিকানা"
+
+msgid "File path"
+msgstr "ফাইল পথ"
+
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+msgid "Floating point number"
+msgstr "ফ্লোটিং পয়েন্ট সংখ্যা"
+
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+msgid "Integer"
+ms

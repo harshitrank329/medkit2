@@ -1,0 +1,425 @@
+uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+"Prebacite ispravan fajl. Fajl koji je prebačen ili nije slika, ili je "
+"oštećen."
+
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+"%(value)s nije među ponuđenim vrijednostima. Odaberite jednu od ponuđenih."
+
+msgid "Enter a list of values."
+msgstr "Unesite listu vrijednosti."
+
+msgid "Enter a complete value."
+msgstr ""
+
+msgid "Enter a valid UUID."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+msgid ":"
+msgstr ""
+
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+msgid "ManagementForm data is missing or has been tampered with"
+msgstr ""
+
+#, python-format
+msgid "Please submit %d or fewer forms."
+msgid_plural "Please submit %d or fewer forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "Please submit %d or more forms."
+msgid_plural "Please submit %d or more forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+msgid "Order"
+msgstr "Redoslijed"
+
+msgid "Delete"
+msgstr "Obriši"
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr "Ispravite dupli sadržaj za polja: %(field)s."
+
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+"Ispravite dupli sadržaj za polja: %(field)s, koji mora da bude jedinstven."
+
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+"Ispravite dupli sadržaj za polja: %(field_name)s, koji mora da bude "
+"jedinstven za %(lookup)s u %(date_field)s."
+
+msgid "Please correct the duplicate values below."
+msgstr "Ispravite duple vrijednosti dole."
+
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+"Odabrana vrijednost nije među ponuđenima. Odaberite jednu od ponuđenih."
+
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+msgid "Clear"
+msgstr "Očisti"
+
+msgid "Currently"
+msgstr "Trenutno"
+
+msgid "Change"
+msgstr "Izmjeni"
+
+msgid "Unknown"
+msgstr "Nepoznato"
+
+msgid "Yes"
+msgstr "Da"
+
+msgid "No"
+msgstr "Ne"
+
+msgid "Year"
+msgstr ""
+
+msgid "Month"
+msgstr ""
+
+msgid "Day"
+msgstr ""
+
+msgid "yes,no,maybe"
+msgstr "da,ne,možda"
+
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "%s KB"
+msgstr "%s KB"
+
+#, python-format
+msgid "%s MB"
+msgstr "%s MB"
+
+#, python-format
+msgid "%s GB"
+msgstr "%s GB"
+
+#, python-format
+msgid "%s TB"
+msgstr "%s TB"
+
+#, python-format
+msgid "%s PB"
+msgstr "%s PB"
+
+msgid "p.m."
+msgstr "po p."
+
+msgid "a.m."
+msgstr "prije p."
+
+msgid "PM"
+msgstr "PM"
+
+msgid "AM"
+msgstr "AM"
+
+msgid "midnight"
+msgstr "ponoć"
+
+msgid "noon"
+msgstr "podne"
+
+msgid "Monday"
+msgstr "ponedjeljak"
+
+msgid "Tuesday"
+msgstr "utorak"
+
+msgid "Wednesday"
+msgstr "srijeda"
+
+msgid "Thursday"
+msgstr "četvrtak"
+
+msgid "Friday"
+msgstr "petak"
+
+msgid "Saturday"
+msgstr "subota"
+
+msgid "Sunday"
+msgstr "nedjelja"
+
+msgid "Mon"
+msgstr "pon."
+
+msgid "Tue"
+msgstr "uto."
+
+msgid "Wed"
+msgstr "sri."
+
+msgid "Thu"
+msgstr "čet."
+
+msgid "Fri"
+msgstr "pet."
+
+msgid "Sat"
+msgstr "sub."
+
+msgid "Sun"
+msgstr "ned."
+
+msgid "January"
+msgstr "januar"
+
+msgid "February"
+msgstr "februar"
+
+msgid "March"
+msgstr "mart"
+
+msgid "April"
+msgstr "april"
+
+msgid "May"
+msgstr "maj"
+
+msgid "June"
+msgstr "juni"
+
+msgid "July"
+msgstr "juli"
+
+msgid "August"
+msgstr "august"
+
+msgid "September"
+msgstr "septembar"
+
+msgid "October"
+msgstr "oktobar"
+
+msgid "November"
+msgstr "novembar"
+
+msgid "December"
+msgstr "decembar"
+
+msgid "jan"
+msgstr "jan."
+
+msgid "feb"
+msgstr "feb."
+
+msgid "mar"
+msgstr "mar."
+
+msgid "apr"
+msgstr "apr."
+
+msgid "may"
+msgstr "maj."
+
+msgid "jun"
+msgstr "jun."
+
+msgid "jul"
+msgstr "jul."
+
+msgid "aug"
+msgstr "aug."
+
+msgid "sep"
+msgstr "sep."
+
+msgid "oct"
+msgstr "okt."
+
+msgid "nov"
+msgstr "nov."
+
+msgid "dec"
+msgstr "dec."
+
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr "Jan."
+
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr "Feb."
+
+msgctxt "abbrev. month"
+msgid "March"
+msgstr "Mart"
+
+msgctxt "abbrev. month"
+msgid "April"
+msgstr "April"
+
+msgctxt "abbrev. month"
+msgid "May"
+msgstr "Maj"
+
+msgctxt "abbrev. month"
+msgid "June"
+msgstr "Juni"
+
+msgctxt "abbrev. month"
+msgid "July"
+msgstr "juli"
+
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr "august"
+
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr "septembar"
+
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr "oktobar"
+
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr "novembar"
+
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr "decembar"
+
+msgctxt "alt. month"
+msgid "January"
+msgstr "januar"
+
+msgctxt "alt. month"
+msgid "February"
+msgstr "februar"
+
+msgctxt "alt. month"
+msgid "March"
+msgstr "mart"
+
+msgctxt "alt. month"
+msgid "April"
+msgstr "april"
+
+msgctxt "alt. month"
+msgid "May"
+msgstr "maj"
+
+msgctxt "alt. month"
+msgid "June"
+msgstr "juni"
+
+msgctxt "alt. month"
+msgid "July"
+msgstr "juli"
+
+msgctxt "alt. month"
+msgid "August"
+msgstr "august"
+
+msgctxt "alt. month"
+msgid "September"
+msgstr "septembar"
+
+msgctxt "alt. month"
+msgid "October"
+msgstr "oktobar"
+
+msgctxt "alt. month"
+msgid "November"
+msgstr "Novembar"
+
+msgctxt "alt. month"
+msgid "December"
+msgstr "decembar"
+
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+msgid "or"
+msgstr "ili"
+
+#. Translators: This string is used as a separator between list elements
+msgid ", "
+msgstr ", "
+
+#, python-format
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+
+#, python-format
+msgid "%d minut
