@@ -1,0 +1,251 @@
+/*
+    pygame - Python Game Library
+    Copyright (C) 2000-2001  Pete Shinners
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License as published by the Free Software Foundation; either
+    version 2 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public
+    License along with this library; if not, write to the Free
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+    Pete Shinners
+    pete@shinners.org
+*/
+
+#ifndef _PYGAME_H
+#define _PYGAME_H
+
+/** This header file includes all the definitions for the
+ ** base pygame extensions. This header only requires
+ ** Python includes (and SDL.h for functions that use SDL types).
+ ** The reason for functions prototyped with #define's is
+ ** to allow for maximum Python portability. It also uses
+ ** Python as the runtime linker, which allows for late binding.
+ '' For more information on this style of development, read
+ ** the Python docs on this subject.
+ ** http://www.python.org/doc/current/ext/using-cobjects.html
+ **
+ ** If using this to build your own derived extensions,
+ ** you'll see that the functions available here are mainly
+ ** used to help convert between python objects and SDL objects.
+ ** Since this library doesn't add a lot of functionality to
+ ** the SDL library, it doesn't need to offer a lot either.
+ **
+ ** When initializing your extension module, you must manually
+ ** import the modules you want to use. (this is the part about
+ ** using python as the runtime linker). Each module has its
+ ** own import_xxx() routine. You need to perform this import
+ ** after you have initialized your own module, and before
+ ** you call any routines from that module. Since every module
+ ** in pygame does this, there are plenty of examples.
+ **
+ ** The base module does include some useful conversion routines
+ ** that you are free to use in your own extension.
+ **/
+
+#include "pgplatform.h"
+#include <Python.h>
+
+/* version macros (defined since version 1.9.5) */
+#define PG_MAJOR_VERSION 2
+#define PG_MINOR_VERSION 6
+#define PG_PATCH_VERSION 1
+#define PG_VERSIONNUM(MAJOR, MINOR, PATCH) \
+    (1000 * (MAJOR) + 100 * (MINOR) + (PATCH))
+#define PG_VERSION_ATLEAST(MAJOR, MINOR, PATCH)                             \
+    (PG_VERSIONNUM(PG_MAJOR_VERSION, PG_MINOR_VERSION, PG_PATCH_VERSION) >= \
+     PG_VERSIONNUM(MAJOR, MINOR, PATCH))
+
+#include "pgcompat.h"
+
+/* Flag indicating a pg_buffer; used for assertions within callbacks */
+#ifndef NDEBUG
+#define PyBUF_PYGAME 0x4000
+#endif
+#define PyBUF_HAS_FLAG(f, F) (((f) & (F)) == (F))
+
+/* Array information exchange struct C type; inherits from Py_buffer
+ *
+ * Pygame uses its own Py_buffer derived C struct as an internal representation
+ * of an imported array buffer. The extended Py_buffer allows for a
+ * per-instance release callback,
+ */
+typedef void (*pybuffer_releaseproc)(Py_buffer *);
+
+typedef struct pg_bufferinfo_s {
+    Py_buffer view;
+    PyObject *consumer; /* Input: Borrowed reference */
+    pybuffer_releaseproc release_buffer;
+} pg_buffer;
+
+#include "pgimport.h"
+
+/*
+ * BASE module
+ */
+#ifndef PYGAMEAPI_BASE_INTERNAL
+#define pgExc_SDLError ((PyObject *)PYGAMEAPI_GET_SLOT(base, 0))
+
+#define pg_RegisterQuit \
+    (*(void (*)(void (*)(void)))PYGAMEAPI_GET_SLOT(base, 1))
+
+/**
+ * \brief Convert number like object *obj* to C int and in *val*.
+ *
+ * \param obj The Python object to convert.
+ * \param val A pointer to the C integer to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ *
+ * \note This function will clear any Python errors.
+ * \note This function will convert floats to integers.
+ */
+#define pg_IntFromObj \
+    (*(int (*)(PyObject *, int *))PYGAMEAPI_GET_SLOT(base, 2))
+
+/**
+ * \brief Convert number like object at position *i* in sequence *obj*
+ * to C int and place in argument *val*.
+ *
+ * \param obj The Python object to convert.
+ * \param i The index of the object to convert.
+ * \param val A pointer to the C integer to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ *
+ * \note This function will clear any Python errors.
+ * \note This function will convert floats to integers.
+ */
+#define pg_IntFromObjIndex \
+    (*(int (*)(PyObject *, int, int *))PYGAMEAPI_GET_SLOT(base, 3))
+
+/**
+ * \brief Convert the two number like objects in length 2 sequence *obj* to C
+ * int and place in arguments *val1* and *val2*.
+ *
+ * \param obj The Python two element sequence object to convert.
+ * \param val A pointer to the C integer to store the result.
+ * \param val2 A pointer to the C integer to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ *
+ * \note This function will clear any Python errors.
+ * \note This function will convert floats to integers.
+ */
+#define pg_TwoIntsFromObj \
+    (*(int (*)(PyObject *, int *, int *))PYGAMEAPI_GET_SLOT(base, 4))
+
+/**
+ * \brief Convert number like object *obj* to C float and in *val*.
+ *
+ * \param obj The Python object to convert.
+ * \param val A pointer to the C float to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ *
+ * \note This function will clear any Python errors.
+ */
+#define pg_FloatFromObj \
+    (*(int (*)(PyObject *, float *))PYGAMEAPI_GET_SLOT(base, 5))
+
+/**
+ * \brief Convert number like object at position *i* in sequence *obj* to C
+ * float and place in argument *val*.
+ *
+ * \param obj The Python object to convert.
+ * \param i The index of the object to convert.
+ * \param val A pointer to the C float to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ *
+ * \note This function will clear any Python errors.
+ */
+#define pg_FloatFromObjIndex \
+    (*(int (*)(PyObject *, int, float *))PYGAMEAPI_GET_SLOT(base, 6))
+
+/**
+ * \brief Convert the two number like objects in length 2 sequence *obj* to C
+ * float and place in arguments *val1* and *val2*.
+ *
+ * \param obj The Python two element sequence object to convert.
+ * \param val A pointer to the C float to store the result.
+ * \param val2 A pointer to the C float to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ *
+ * \note This function will clear any Python errors.
+ */
+#define pg_TwoFloatsFromObj \
+    (*(int (*)(PyObject *, float *, float *))PYGAMEAPI_GET_SLOT(base, 7))
+
+/**
+ * \brief Convert number like object *obj* to C Uint32 and in *val*.
+ *
+ * \param obj The Python object to convert.
+ * \param val A pointer to the C int to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ */
+#define pg_UintFromObj \
+    (*(int (*)(PyObject *, Uint32 *))PYGAMEAPI_GET_SLOT(base, 8))
+
+/**
+ * \brief Convert number like object at position *i* in sequence *obj* to C
+ * Uint32 and place in argument *val*.
+ *
+ * \param obj The Python object to convert.
+ * \param i The index of the object to convert.
+ * \param val A pointer to the C int to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ */
+#define pg_UintFromObjIndex \
+    (*(int (*)(PyObject *, int, Uint32 *))PYGAMEAPI_GET_SLOT(base, 9))
+
+/**
+ * \brief Initialize all of the pygame modules.
+ * \returns 1 on success, 0 on failure with PyErr set.
+ */
+#define pg_mod_autoinit (*(int (*)(const char *))PYGAMEAPI_GET_SLOT(base, 10))
+
+/**
+ * \brief Quit all of the pygame modules.
+ */
+#define pg_mod_autoquit (*(void (*)(const char *))PYGAMEAPI_GET_SLOT(base, 11))
+
+/**
+ * \brief Convert the color represented by object *obj* into a red, green,
+ * blue, alpha length 4 C array *RGBA*.
+ *
+ * The object must be a length 3 or 4 sequence of numbers having values between
+ * 0 and 255 inclusive. For a length 3 sequence an alpha value of 255 is
+ * assumed.
+ *
+ * \param obj The Python object to convert.
+ * \param RGBA A pointer to the C array to store the result.
+ * \returns 1 if the conversion was successful, 0 otherwise.
+ */
+#define pg_RGBAFromObj \
+    (*(int (*)(PyObject *, Uint8 *))PYGAMEAPI_GET_SLOT(base, 12))
+
+/**
+ * \brief Given a Py_buffer, return a python dictionary representing the array
+ * interface.
+ *
+ * \param view_p A pointer to the Py_buffer to convert to a dictionary.
+ *
+ * \returns A Python dictionary representing the array interface of the object.
+ */
+#define pgBuffer_AsArrayInterface \
+    (*(PyObject * (*)(Py_buffer *)) PYGAMEAPI_GET_SLOT(base, 13))
+
+/**
+ * \brief Given a Py_buffer, return a python capsule representing the array
+ * interface.
+ *
+ * \param view_p A pointer to the Py_buffer to convert to a capsule.
+ *
+ * \returns A Python capsule representing the array interface of the object.
+ */
+#define pgBuffer_AsArrayStruct \
+    (*(PyObject * (*)(Py_buffer *)) PYGAM

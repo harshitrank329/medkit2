@@ -1,0 +1,332 @@
+# This file is distributed under the same license as the Django package.
+#
+# Translators:
+# F Wolff <friedel@translate.org.za>, 2019-2020,2022-2025
+# Stephen Cox <stephencoxmail@gmail.com>, 2011-2012
+# unklphil <villiers.strauss@gmail.com>, 2014,2019
+msgid ""
+msgstr ""
+"Project-Id-Version: django\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-19 11:30-0500\n"
+"PO-Revision-Date: 2025-04-01 15:04-0500\n"
+"Last-Translator: F Wolff <friedel@translate.org.za>, 2019-2020,2022-2025\n"
+"Language-Team: Afrikaans (http://app.transifex.com/django/django/language/"
+"af/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: af\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Afrikaans"
+msgstr "Afrikaans"
+
+msgid "Arabic"
+msgstr "Arabies"
+
+msgid "Algerian Arabic"
+msgstr "Algeriese Arabies"
+
+msgid "Asturian"
+msgstr "Asturies"
+
+msgid "Azerbaijani"
+msgstr "Aserbeidjans"
+
+msgid "Bulgarian"
+msgstr "Bulgaars"
+
+msgid "Belarusian"
+msgstr "Wit-Russies"
+
+msgid "Bengali"
+msgstr "Bengali"
+
+msgid "Breton"
+msgstr "Bretons"
+
+msgid "Bosnian"
+msgstr "Bosnies"
+
+msgid "Catalan"
+msgstr "Katalaans"
+
+msgid "Central Kurdish (Sorani)"
+msgstr ""
+
+msgid "Czech"
+msgstr "Tsjeggies"
+
+msgid "Welsh"
+msgstr "Wallies"
+
+msgid "Danish"
+msgstr "Deens"
+
+msgid "German"
+msgstr "Duits"
+
+msgid "Lower Sorbian"
+msgstr "Neder-Sorbies"
+
+msgid "Greek"
+msgstr "Grieks"
+
+msgid "English"
+msgstr "Engels"
+
+msgid "Australian English"
+msgstr "Australiese Engels"
+
+msgid "British English"
+msgstr "Britse Engels"
+
+msgid "Esperanto"
+msgstr "Esperanto"
+
+msgid "Spanish"
+msgstr "Spaans"
+
+msgid "Argentinian Spanish"
+msgstr "Argentynse Spaans"
+
+msgid "Colombian Spanish"
+msgstr "Kolombiaanse Spaans"
+
+msgid "Mexican Spanish"
+msgstr "Meksikaanse Spaans"
+
+msgid "Nicaraguan Spanish"
+msgstr "Nicaraguaanse Spaans"
+
+msgid "Venezuelan Spanish"
+msgstr "Venezolaanse Spaans"
+
+msgid "Estonian"
+msgstr "Estnies"
+
+msgid "Basque"
+msgstr "Baskies"
+
+msgid "Persian"
+msgstr "Persies"
+
+msgid "Finnish"
+msgstr "Fins"
+
+msgid "French"
+msgstr "Fraans"
+
+msgid "Frisian"
+msgstr "Fries"
+
+msgid "Irish"
+msgstr "Iers"
+
+msgid "Scottish Gaelic"
+msgstr "Skots-Gaelies"
+
+msgid "Galician"
+msgstr "Galicies"
+
+msgid "Hebrew"
+msgstr "Hebreeus"
+
+msgid "Hindi"
+msgstr "Hindoe"
+
+msgid "Croatian"
+msgstr "Kroaties"
+
+msgid "Upper Sorbian"
+msgstr "Opper-Sorbies"
+
+msgid "Hungarian"
+msgstr "Hongaars"
+
+msgid "Armenian"
+msgstr "Armeens"
+
+msgid "Interlingua"
+msgstr "Interlingua"
+
+msgid "Indonesian"
+msgstr "Indonesies"
+
+msgid "Igbo"
+msgstr ""
+
+msgid "Ido"
+msgstr "Ido"
+
+msgid "Icelandic"
+msgstr "Yslands"
+
+msgid "Italian"
+msgstr "Italiaans"
+
+msgid "Japanese"
+msgstr "Japannees"
+
+msgid "Georgian"
+msgstr "Georgian"
+
+msgid "Kabyle"
+msgstr "Kabilies"
+
+msgid "Kazakh"
+msgstr "Kazakh"
+
+msgid "Khmer"
+msgstr "Khmer"
+
+msgid "Kannada"
+msgstr "Kannada"
+
+msgid "Korean"
+msgstr "Koreaans"
+
+msgid "Kyrgyz"
+msgstr ""
+
+msgid "Luxembourgish"
+msgstr "Luxemburgs"
+
+msgid "Lithuanian"
+msgstr "Litaus"
+
+msgid "Latvian"
+msgstr "Lets"
+
+msgid "Macedonian"
+msgstr "Macedonies"
+
+msgid "Malayalam"
+msgstr "Malabaars"
+
+msgid "Mongolian"
+msgstr "Mongools"
+
+msgid "Marathi"
+msgstr "Marathi"
+
+msgid "Malay"
+msgstr "Maleisies"
+
+msgid "Burmese"
+msgstr "Birmaans"
+
+msgid "Norwegian Bokmål"
+msgstr "Noorweegse Bokmål"
+
+msgid "Nepali"
+msgstr "Nepalees"
+
+msgid "Dutch"
+msgstr "Nederlands"
+
+msgid "Norwegian Nynorsk"
+msgstr "Noorweegse Nynorsk"
+
+msgid "Ossetic"
+msgstr "Osseties"
+
+msgid "Punjabi"
+msgstr "Punjabi"
+
+msgid "Polish"
+msgstr "Pools"
+
+msgid "Portuguese"
+msgstr "Portugees"
+
+msgid "Brazilian Portuguese"
+msgstr "Brasiliaanse Portugees"
+
+msgid "Romanian"
+msgstr "Roemeens"
+
+msgid "Russian"
+msgstr "Russiese"
+
+msgid "Slovak"
+msgstr "Slowaaks"
+
+msgid "Slovenian"
+msgstr "Sloweens"
+
+msgid "Albanian"
+msgstr "Albanees"
+
+msgid "Serbian"
+msgstr "Serwies"
+
+msgid "Serbian Latin"
+msgstr "Serwies Latyns"
+
+msgid "Swedish"
+msgstr "Sweeds"
+
+msgid "Swahili"
+msgstr "Swahili"
+
+msgid "Tamil"
+msgstr "Tamil"
+
+msgid "Telugu"
+msgstr "Teloegoe"
+
+msgid "Tajik"
+msgstr ""
+
+msgid "Thai"
+msgstr "Thai"
+
+msgid "Turkmen"
+msgstr ""
+
+msgid "Turkish"
+msgstr "Turks"
+
+msgid "Tatar"
+msgstr "Tataars"
+
+msgid "Udmurt"
+msgstr "Oedmoerts"
+
+msgid "Uyghur"
+msgstr ""
+
+msgid "Ukrainian"
+msgstr "Oekraïens"
+
+msgid "Urdu"
+msgstr "Oerdoe"
+
+msgid "Uzbek"
+msgstr "Oesbekies "
+
+msgid "Vietnamese"
+msgstr "Viëtnamees"
+
+msgid "Simplified Chinese"
+msgstr "Vereenvoudigde Sjinees"
+
+msgid "Traditional Chinese"
+msgstr "Tradisionele Sjinees"
+
+msgid "Messages"
+msgstr "Boodskappe"
+
+msgid "Site Maps"
+msgstr "Werfkaarte"
+
+msgid "Static Files"
+msgstr "Statiese lêers"
+
+msgid "Syndication"
+msgstr "Sindikasie"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…
