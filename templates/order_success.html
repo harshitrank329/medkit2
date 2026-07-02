@@ -1,0 +1,278 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Successful - Medkit</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: #f1f3f6;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            /* Add for vertical scroll if needed */
+            overflow-y: auto;
+        }
+        .success-container {
+            background: transparent;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px #0002;
+            padding: 40px 32px;
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            /* Add for vertical scroll if content is long */
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo h1 {
+            font-size: 2rem;
+            color: #27ae60;
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: #27ae60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            animation: successPulse 2s ease-in-out infinite;
+        }
+        .success-icon i {
+            font-size: 40px;
+            color: white;
+        }
+        @keyframes successPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .success-title {
+            font-size: 28px;
+            color: #27ae60;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+        .success-message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+        .order-details {
+            background: #f8f8f8;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            padding: 24px;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+        .order-details h3 {
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: #333;
+            font-size: 18px;
+        }
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-row:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            font-weight: 600;
+            color: #27ae60;
+        }
+        .detail-label {
+            color: #666;
+            font-weight: 500;
+        }
+        .detail-value {
+            color: #333;
+            font-weight: 500;
+        }
+        .tracking-info {
+            background: #e8f5e8;
+            border: 1px solid #27ae60;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 32px;
+        }
+        .tracking-info h4 {
+            color: #27ae60;
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+        .tracking-info p {
+            margin: 0;
+            color: #555;
+            font-size: 14px;
+        }
+        .action-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn {
+            min-width: 140px;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .primary-btn {
+            background: #27ae60;
+            color: #fff;
+        }
+        .primary-btn:hover {
+            background: #219653;
+            transform: translateY(-2px);
+        }
+        .secondary-btn {
+            background: #fff;
+            color: #27ae60;
+            border: 2px solid #27ae60;
+        }
+        .secondary-btn:hover {
+            background: #27ae60;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+        .next-steps {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #eee;
+        }
+        .next-steps h4 {
+            color: #333;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .steps-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            color: #666;
+            font-size: 14px;
+        }
+        .steps-list li i {
+            color: #27ae60;
+            margin-right: 12px;
+            width: 16px;
+        }
+        @media (max-width: 600px) {
+            .success-container {
+                padding: 24px 16px;
+                margin: 16px;
+            }
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-container">
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <h1><i class="fas fa-clinic-medical"></i> Medkit</h1>
+                </a>
+            </div>
+            
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h2 class="success-title">Order Placed Successfully!</h2>
+            <p class="success-message">
+                Thank you for your purchase! Your order has been confirmed and will be processed shortly.
+            </p>
+            
+            <div class="order-details">
+                <h3>Order Details</h3>
+                <div class="detail-row">
+                    <span class="detail-label">Order ID:</span>
+                    <span class="detail-value">#{{ order_id }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Order Date:</span>
+                    <span class="detail-value">{{ order_date }}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Payment Method:</span>
+                    <span class="detail-value">Credit Card</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Delivery Address:</span>
+                    <span class="detail-value">123 Medical Plaza, Junagadh - 362001</span>
+                </div>
+                <div class="detail-row">
+                    <span class="detail-label">Total Amount:</span>
+                    <span class="detail-value">{{ total_amount }}</span>
+                </div>
+            </div>
+            
+            <div class="tracking-info">
+                <h4><i class="fas fa-truck"></i> Delivery Information</h4>
+                <p>Your order will be delivered within 2-3 business days. You will receive SMS updates on your registered mobile number.</p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="{% url 'index' %}" class="btn primary-btn">
+                    <i class="fas fa-home"></i> Continue Shopping
+                </a>
+                <a href="#" class="btn secondary-btn">
+                    <i class="fas fa-eye"></i> Track Order
+                </a>
+            </div>
+            
+            <div class="next-steps">
+                <h4>What's Next?</h4>
+                <ul class="steps-list">
+                    <li><i class="fas fa-check-circle"></i> Order confirmation sent to your email</li>
+                    <li><i class="fas fa-box"></i> Your order is being prepared</li>
+                    <li><i class="fas fa-shipping-fast"></i> Order dispatched for delivery</li>
+                    <li><i class="fas fa-home"></i> Delivered to your doorstep</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

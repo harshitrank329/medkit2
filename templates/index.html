@@ -1,0 +1,567 @@
+{% load static %}
+{% load template_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medkit - Online Medical Store</title>
+    <link rel="icon" href="../static/images/mainlogo1.png" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Rating Popup Styles */
+        html{
+            scroll-behavior: smooth;
+        }
+        .rating-popup-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .rate-us-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+        }
+        .rate-us-btn:hover {
+            background: #229954;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
+        .rating-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 1000;
+            min-width: 400px;
+            max-width: 500px;
+        }
+        .rating-popup.show {
+            display: block;
+        }
+        .rating-popup h3 {
+            color: #27ae60;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .stars {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 30px;
+        }
+        .stars i {
+            color: #ddd;
+            cursor: pointer;
+            margin: 0 5px;
+            transition: color 0.3s ease;
+        }
+        .stars i:hover,
+        .stars i.active {
+            color: #ffc107;
+        }
+        .rating-popup textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: inherit;
+            resize: vertical;
+        }
+        .rating-popup textarea:focus {
+            outline: none;
+            border-color: #27ae60;
+            box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.1);
+        }
+        .submit-rating-btn,
+        .close-popup-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        .submit-rating-btn {
+            background: #27ae60;
+            color: white;
+        }
+        .submit-rating-btn:hover {
+            background: #229954;
+        }
+        .close-popup-btn {
+            background: #6c757d;
+            color: white;
+        }
+        .close-popup-btn:hover {
+            background: #545b62;
+        }
+        .rating-popup::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: -1;
+        }
+        .rating-error {
+            color: #dc3545;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <h1><i class="fas fa-clinic-medical"></i> Medkit</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'index' %}#products">Products</a></li>
+                    <li><a href="{% url 'index' %}#categories">Categories</a></li>
+                    <li><a href="{% url 'index' %}#about">About Us</a></li>
+                    <li><a href="{% url 'index' %}#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'profile' %}" title="Profile" style="margin-left: 15px;"><i class="fas fa-user"></i></a>
+                    <a href="{% url 'logout' %}" title="Logout" style="margin-left: 15px;"><i class="fas fa-sign-out-alt"></i></a>
+                {% else %}
+                    <a href="{% url 'login' %}" title="Login" style="margin-left: 15px;"><i class="fas fa-user"></i></a>
+                {% endif %}
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Your Health, Our Priority</h1>
+                <p>Get medicines delivered at your doorstep</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'index' %}#products" class="btn primary-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="feature-card">
+                <i class="fas fa-truck"></i>
+                <h3>Fast Delivery</h3>
+                <p>Medicines delivered within 24 hours</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-certificate"></i>
+                <h3>Genuine Products</h3>
+                <p>100% authentic medicines</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-tag"></i>
+                <h3>Best Prices</h3>
+                <p>Discounts up to 30% on medicines</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>24/7 Support</h3>
+                <p>Customer service always available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Categories</h2>
+            <div class="category-grid">
+                <div class="category-card"><a href="{% url 'personal_care' %}">
+                    <img src="../static/images/personal care.jpg" alt="Medicines">
+                    <h3>Personal care</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'protein' %}">
+                    <img src="../static/images/proitn.jpg" alt="Wellness">
+                    <h3>Protein</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'nutrition' %}">
+                    <img src="../static/images/nutrition.jpg" alt="Nutrition">
+                    <h3>Nutrition</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'ayurvedic' %}">
+                    <img src="../static/images/ayurved.jpg" alt="Ayurved">
+                    <h3>Ayurved</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'food_drinks' %}">
+                    <img src="../static/images/food & drink.jpg" alt="Food & Drinks">
+                    <h3>Food & Drinks</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'medical_devices' %}">
+                    <img src="../static/images/medical device.jpg" alt="Medical Devices">
+                    <h3>Medical Devices</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'home_care_hygiene' %}">
+                    <img src="../static/images/home hygine.png" alt="Home Care & Hygiene">
+                    <h3>Home Care & Hygiene</h3></a>
+                </div>
+                <div class="category-card"><a href="{% url 'new_launches' %}">
+                    <img src="../static/images/new launch.webp" alt="Newly Launches">
+                    <h3>Newly Launches</h3></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Popular Products</h2>
+                <div class="product-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="medicines">Medicines</button>
+                    <button class="filter-btn" data-filter="wellness">Wellness</button>
+                    <button class="filter-btn" data-filter="devices">Devices</button>
+                </div>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be dynamically loaded JavaScript -->
+            </div>
+            <div class="view-more-container">
+                <button class="btn secondary-btn" id="view-all-btn">View All Products</button>
+                <button class="btn secondary-btn" id="view-less-btn">View Less Products</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Offers Section -->
+    <section class="offers">
+        <div class="container">
+            <h2 class="section-title">Special Offers</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-content">
+                        <h3>New User Offer</h3>
+                        <p>Get 20% off on your first order</p>
+                        <span class="offer-code">Use code: MEDI20</span>
+                        <a href="#" class="btn primary-btn">Shop Now</a>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-content">
+                        <h3>Summer Season Sale</h3>
+                        <p>Flat 15% off on all products</p>
+                        <span class="offer-code">Use code: FEST15</span>
+                        <a href="#" class="btn primary-btn">Shop Now</a>
+                    </div>
+                    <div class="Summer Season Sale">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Customers Say</h2>
+            <div class="rating-popup-container">
+                <button class="rate-us-btn">Rate Us</button>
+                <div class="rating-popup">
+                    <h3>Rate This Product</h3>
+                    <div class="stars">
+                        <i class="fas fa-star" data-value="1"></i>
+                        <i class="fas fa-star" data-value="2"></i>
+                        <i class="fas fa-star" data-value="3"></i>
+                        <i class="fas fa-star" data-value="4"></i>
+                        <i class="fas fa-star" data-value="5"></i>
+                    </div>
+                    <textarea placeholder="Leave a comment..." rows="4"></textarea>
+                    <button class="submit-rating-btn">Submit</button>
+                    <button class="close-popup-btn">Close</button>
+                </div>
+            </div>
+            <div class="testimonial-slider">
+                {% for testimonial in testimonials %}
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"{{ testimonial.comment }}"</p>
+                        <div class="customer-info">
+                            <h4>{{ testimonial.name }}</h4>
+                            <div class="rating">
+                                {% for i in testimonial.rating|get_range %}
+                                <i class="fas fa-star"></i>
+                                {% endfor %}
+                                {% if testimonial.rating|get_decimal_part > 0 %}
+                                <i class="fas fa-star-half-alt"></i>
+                                {% endif %}
+                                {% for i in testimonial.rating|get_remaining_stars %}
+                                <i class="far fa-star"></i>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"Be the first to share your experience with Medkit!"</p>
+                        <div class="customer-info">
+                            <h4>Your Feedback Matters</h4>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About Medkit</h2>
+                    <p>Medkit is a trusted online pharmacy that aims to provide high-quality healthcare products and medicines at affordable prices. Our mission is to make healthcare accessible to everyone.</p>
+                    <p>Founded in 2020, we have grown to become one of the leading online medical stores, serving thousands of customers across the country.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>10,000+</h3>
+                            <p>Products</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50,000+</h3>
+                            <p>Happy Customers</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100+</h3>
+                            <p>Cities</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="../static/images/about img.jpeg" alt="About Medkit">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Subscribe to Our Newsletter</h2>
+                <p>Get updates on new products, special offers, and health tips.</p>
+                <form id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit" class="btn primary-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-image" style="text-align: center;">
+                    <img src="{% static 'images/background.jpg' %}" alt="Contact Us" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Medkit Motibag, 123 Medical Plaza, Junagadh - 362001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:+916356247202">+91 63562 47202</a></p>
+                            <p><a href="tel:+916352109112">+91 63521 09112</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:piyubhesaniya061@gmail.com">piyubhesaniya061@gmail.com</a></p>
+                            <p><a href="mailto:riddhigajera009@gmail.com">riddhigajera009@gmail.com</a></p>
+
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Working Hours</h3>
+                            <p>Monday - Saturday: 9am - 8pm</p>
+                            <p>Sunday: 10am - 6pm</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-link" style="margin-top: 30px;">
+                    <a href="{% url 'contact' %}" class="btn primary-btn">Contact Form</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Rating Popup -->
+    <div class="rating-popup-container">
+        <button class="rate-us-btn">Rate Us</button>
+        <div class="rating-popup">
+            <h3>Rate This Product</h3>
+            <div class="stars">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+            </div>
+            <textarea placeholder="Leave a comment..." rows="4"></textarea>
+            <button class="submit-rating-btn">Submit</button>
+            <button class="close-popup-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="cart-items" id="cart-items">
+        <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <div class="cart-total">
+            <div class="cart-footer">
+                <div>
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0.00</span>
+                </div>
+                <a href="{% url 'address' %}"><button class="btn primary-btn checkout-btn">Checkout</button></a>
+                <button class="btn secondary-btn continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-clinic-medical"></i> Medkit</h2>
+                    <p>Your trusted online medical store</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="{% url 'index' %}">Home</a></li>
+                            <li><a href="{% url 'index' %}#products">Products</a></li>
+                            <li><a href="{% url 'index' %}#categories">Categories</a></li>
+                            <li><a href="{% url 'index' %}#about">About Us</a></li>
+                            <li><a href="{% url 'index' %}#contact">Contact</a></li>
+                            {% if request.user.is_authenticated %}
+                                <li><a href="{% url 'profile' %}">My Profile</a></li>
+                                <li><a href="{% url 'logout' %}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{% url 'login' %}">Login / Register</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="{% url 'personal_care' %}">Personal care</a></li>
+                            <li><a href="{% url 'protein' %}">Protein</a></li>
+                            <li><a href="{% url 'nutrition' %}">Nutrition</a></li>
+                            <li><a href="{% url 'ayurvedic' %}">Ayurved</a></li>
+                            <li><a href="{% url 'food_drinks' %}">Food & Drinks</a></li>
+                            <li><a href="{% url 'medical_devices' %}">Medical Devices</a></li>
+                            <li><a href="{% url 'home_care_hygiene' %}">Home care & Hygiene</a></li>
+                            <li><a href="{% url 'new_launches' %}">Newly Launches</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Help</h3>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                            <li><a href="{% url 'terms_and_conditions' %}">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Medkit. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <span>Payment Methods:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+{% load static %}
+
+<script src="{% static 'js/main.js' %}" defer></script></body>
+</html>

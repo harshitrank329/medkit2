@@ -1,0 +1,162 @@
+<!-- base.html removed as requested -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medkit - Online Medical Store</title>
+    <link rel="icon" href="../static/images/mainlogo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <h1><i class="fas fa-clinic-medical"></i> Medkit</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'index' %}#products">Products</a></li>
+                    <li><a href="{% url 'index' %}#categories">Categories</a></li>
+                    <li><a href="{% url 'index' %}#about">About Us</a></li>
+                    <li><a href="{% url 'index' %}#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}" id="logout-icon" title="Logout" style="margin-left: 15px; color: #e74c3c;"><i class="fas fa-sign-out-alt"></i></a>
+                {% else %}
+                    <a href="{% url 'login' %}" id="user-icon" title="Login" style="margin-left: 15px;"><i class="fas fa-user"></i></a>
+                {% endif %}
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+{% block content %}
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-content">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Address</h3>
+                        <p>Medkit Motibag, 123 Medical Plaza, junagadh - 362001 </p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa fa-phone"></i>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 63562 47202</p>
+                        <p>+91 63521 09112</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>piyubhesaniya061@gmail.com</p>
+                        <p>riddhigajera009@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h3>Working Hours</h3>
+                        <p>Monday - Saturday: 9am - 8pm</p>
+                        <p>Sunday: 10am - 6pm</p>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contact-form" method="POST" action="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <!-- Display form errors -->
+                    {% if contact_form.non_field_errors %}
+                        <div class="error-message" style="background: #f8d7da; color: #721c24; padding: 12px; border-radius: 4px; margin-bottom: 15px; border: 1px solid #f5c6cb;">
+                            {% for error in contact_form.non_field_errors %}
+                                <i class="fas fa-exclamation-triangle"></i> {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    <div class="form-group">
+                        {{ contact_form.name }}
+                        {% if contact_form.name.errors %}
+                            <div class="field-error" style="color: #721c24; font-size: 12px; margin-top: 5px;">
+                                {% for error in contact_form.name.errors %}
+                                    <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ contact_form.email }}
+                        {% if contact_form.email.errors %}
+                            <div class="field-error" style="color: #721c24; font-size: 12px; margin-top: 5px;">
+                                {% for error in contact_form.email.errors %}
+                                    <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ contact_form.subject }}
+                        {% if contact_form.subject.errors %}
+                            <div class="field-error" style="color: #721c24; font-size: 12px; margin-top: 5px;">
+                                {% for error in contact_form.subject.errors %}
+                                    <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ contact_form.message }}
+                        {% if contact_form.message.errors %}
+                            <div class="field-error" style="color: #721c24; font-size: 12px; margin-top: 5px;">
+                                {% for error in contact_form.message.errors %}
+                                    <i class="fas fa-exclamation-circle"></i> {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                </form>
+                <!-- Success message -->
+                {% if success %}
+                <div class="success-message" style="background: #d4edda; color: #155724; padding: 12px; border-radius: 4px; margin-top: 15px; border: 1px solid #c3e6cb;">
+                    <i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.
+                </div>
+                {% endif %}
+                <!-- General error message -->
+                {% if error %}
+                <div class="error-message" style="background: #f8d7da; color: #721c24; padding: 12px; border-radius: 4px; margin-top: 15px; border: 1px solid #f5c6cb;">
+                    <i class="fas fa-exclamation-triangle"></i> {{ error }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+</body>
+</html>

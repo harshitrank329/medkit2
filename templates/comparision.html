@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h2 class="section-title text-center">Product Comparison</h2>
+
+    {% if product1 or product2 %}
+    <div class="row">
+        <div class="col-md-6">
+            {% if product1 %}
+            <div class="card mb-4">
+                <img src="{{ product1.image.url }}" class="card-img-top" alt="{{ product1.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product1.name }}</h5>
+                    <p class="card-text">{{ product1.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Price:</strong> ₹{{ product1.price }}</li>
+                        <li class="list-group-item"><strong>Category:</strong> {{ product1.category }}</li>
+                        <li class="list-group-item"><strong>Availability:</strong> {% if product1.stock > 0 %}In Stock{% else %}Out of Stock{% endif %}</li>
+                    </ul>
+                </div>
+            </div>
+            {% else %}
+            <p class="text-center text-danger">Product 1 not found.</p>
+            {% endif %}
+        </div>
+        <div class="col-md-6">
+            {% if product2 %}
+            <div class="card mb-4">
+                <img src="{{ product2.image.url }}" class="card-img-top" alt="{{ product2.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product2.name }}</h5>
+                    <p class="card-text">{{ product2.description }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Price:</strong> ₹{{ product2.price }}</li>
+                        <li class="list-group-item"><strong>Category:</strong> {{ product2.category }}</li>
+                        <li class="list-group-item"><strong>Availability:</strong> {% if product2.stock > 0 %}In Stock{% else %}Out of Stock{% endif %}</li>
+                    </ul>
+                </div>
+            </div>
+            {% else %}
+            <p class="text-center text-danger">Product 2 not found.</p>
+            {% endif %}
+        </div>
+    </div>
+    {% else %}
+    <p class="text-center">Please provide two product IDs to compare.</p>
+    {% endif %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Medkit - Online Medical Store</title>
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <h1><i class="fas fa-clinic-medical"></i> Medkit</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'index' %}" class="active">Home</a></li>
+                    <li><a href="{% url 'index' %}#products">Products</a></li>
+                    <li><a href="{% url 'index' %}#categories">Categories</a></li>
+                    <li><a href="{% url 'index' %}#about">About Us</a></li>
+                    <li><a href="{% url 'index' %}#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></a>
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'logout' %}" id="logout-icon" title="Logout" style="margin-left: 15px; color: #e74c3c;"><i class="fas fa-sign-out-alt"></i></a>
+                {% else %}
+                    <a href="{% url 'login' %}" id="user-icon" title="Login" style="margin-left: 15px;"><i class="fas fa-user"></i></a>
+                {% endif %}
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+        </div>
+    </header>
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Food & Drinks Products</h2>
+            </div>
+            <div class="product-grid" id="product-grid">
+                <!-- Products will be dynamically loaded JavaScript -->
+            </div>
+        </div>
+    </section>
+     <!-- Cart Sidebar -->
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <span class="close-cart"><i class="fas fa-times"></i></span>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically loaded here -->
+        </div>
+        <div class="cart-total">
+            <div class="cart-footer">
+                <div>
+                    <span>Total:</span>
+                    <span id="cart-total-price">₹0.00</span>
+                </div>
+                <a href="{% url 'address' %}"><button class="btn primary-btn checkout-btn">Checkout</button></a>
+                <button class="btn secondary-btn continue-shopping">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2><i class="fas fa-clinic-medical"></i> Medikit</h2>
+                    <p>Your trusted online medical store</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#products">Products</a></li>
+                            <li><a href="#categories">Categories</a></li>
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="login.html">Login / Register</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Categories</h3>
+                        <ul>
+                            <li><a href="#">Personal care</a></li>
+                            <li><a href="#">Protein</a></li>
+                            <li><a href="#">Nutrition</a></li>
+                            <li><a href="#">Ayurved</a></li>
+                            <li><a href="#">Food & Drinks</a></li>
+                            <li><a href="#">Medical Devices</a></li>
+                            <li><a href="#">Home care & Hygiene</a></li>
+                            <li><a href="#">Newly Lanuches</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Help</h3>
+                        <ul>
+                            <li><a href="#">FAQs</a></li>
+                            <li><a href="#">Shipping Policy</a></li>
+                            <li><a href="#">Return Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Medkit. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <span>Payment Methods:</span>
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+

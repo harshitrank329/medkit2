@@ -1,0 +1,344 @@
+<!-- filepath: c:\Users\pragnesh\myenv\Medkit\templates\Payment.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Medkit</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        a {
+            text-decoration: none !important;
+        }
+
+        body {
+            background: #f1f3f6;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .payment-container {
+            background: transparent;
+            /* changed from #fff to transparent */
+            border-radius: 12px;
+            box-shadow: 0 4px 24px #0002;
+            padding: 32px 28px 24px 28px;
+            width: 100%;
+            max-width: 520px;
+            max-height: 90vh;
+            /* Add this line */
+            overflow-y: auto;
+            /* Add this line */
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .logo h1 {
+            font-size: 2rem;
+            color: #27ae60;
+            /* changed from #2874f0 (blue) to green */
+            margin: 0;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .stepper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        .step {
+            color: #878787;
+            font-weight: 500;
+        }
+
+        .step.active {
+            color: #27ae60;
+            /* changed from #2874f0 (blue) to green */
+        }
+
+        .step:not(:last-child)::after {
+            content: '>';
+            margin: 0 12px;
+            color: #bdbdbd;
+        }
+
+        .address-summary {
+            background: #f5faff;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #e3eafc;
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+
+        .payment-methods label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 14px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .payment-methods input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .payment-form {
+            margin-top: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+
+        .btn {
+            min-width: 120px;
+            padding: 12px 0;
+            font-size: 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .primary-btn {
+            background: #27ae60;
+            /* changed from #2874f0 (blue) to green */
+            color: #fff;
+        }
+
+        .secondary-btn {
+            background: #fff;
+            color: #27ae60;
+            /* changed from #2874f0 (blue) to green */
+            border: 1px solid #27ae60;
+            /* changed from #2874f0 (blue) to green */
+            margin-left: 10px;
+            width: 100px !important;
+        }
+
+        .order-summary {
+            background: #f8f8f8;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            padding: 16px;
+            margin-top: 24px;
+            font-size: 15px;
+        }
+
+        .order-summary h3 {
+            margin-top: 0;
+            font-size: 17px;
+        }
+
+        .order-summary ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 10px 0;
+        }
+
+        .order-summary li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .order-summary .price {
+            font-weight: 500;
+        }
+
+        .order-summary .total {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 500px) {
+            .payment-container {
+                padding: 12px 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="payment-container">
+            <div class="logo">
+                <a href="{% url 'index' %}">
+                    <h1><i class="fas fa-clinic-medical"></i> Medkit</h1>
+                </a>
+            </div>
+            <div class="stepper">
+                <div class="step">1. Cart</div>
+                <div class="step">2. Address</div>
+                <div class="step active">3. Payment</div>
+            </div>
+            <div class="address-summary">
+                <strong>Deliver to:</strong> harshit rank, 123 Medical Plaza, Junagadh - 362001, +91 63510 79049
+            </div>
+            <div class="payment-methods">
+                <strong>Select Payment Method</strong>
+                <form method="post" class="payment-form">
+                    {% csrf_token %}
+                    <label>
+                        <input type="radio" name="payment_method" value="card" checked>
+                        <i class="fas fa-credit-card"></i> Credit/Debit Card
+                    </label>
+                    <label>
+                        <input type="radio" name="payment_method" value="upi">
+                        <i class="fas fa-mobile-alt"></i> UPI
+                    </label>
+                    <script>
+                        function updateAmount() {
+                            const selectedProductAmount = localStorage.getItem('selectedProductAmount') || "0"; // Replace with actual logic to get selected product amount
+                            document.getElementById('amount').value = selectedProductAmount;
+                            document.getElementById('product-amount').style.display = selectedProductAmount ? 'block' : 'none';
+                        }
+                    </script>
+                    <label>
+                        <input type="radio" name="payment_method" value="cod">
+                        <i class="fas fa-money-bill-wave"></i> Cash on Delivery
+                    </label>
+                    <!-- Card Payment Fields -->
+                    <div id="card-fields">
+                        <div class="form-group">
+                            <label for="card-name">Cardholder Name</label>
+                            <input type="text" id="card-name" name="card_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="card-number">Card Number</label>
+                            <input type="text" id="card-number" name="card_number" maxlength="16" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiry">Expiry Date</label>
+                            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV</label>
+                            <input type="password" id="cvv" name="cvv" maxlength="4" required>
+                        </div>
+                    </div>
+                    <!-- UPI Payment Fields -->
+                    <div id="upi-fields" style="display:none;">
+                        <div class="form-group">
+                            <label for="upi-id">Enter UPI ID</label>
+                            <input type="text" id="upi-id" name="upi_id" placeholder="example@upi">
+                        </div>
+                    </div>
+                    <button type="button" class="btn primary-btn" onclick="handlePayment()">Pay Now</button>
+                    <button class="btn secondary-btn"><a href="{% url 'index' %}" style="color: #27ae60;">Cancel</a></button>
+                    {% if payment_success %}
+                    <p class="success-message">Payment successful! Thank you for your purchase.</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+    function handlePayment() {
+        const selectedMethod = document.querySelector('input[name="payment_method"]:checked').value;
+
+        if (selectedMethod === 'card') {
+            if (!validateCard()) return;
+            alert("Processing Card Payment...");
+            // Submit form or handle card payment
+        } else if (selectedMethod === 'upi') {
+            payWithUPI();
+        } else if (selectedMethod === 'cod') {
+            alert("Cash on Delivery selected. Proceeding to checkout.");
+            document.querySelector('form').submit();
+        } else if (selectedMethod === 'product') {
+            alert("Using product amount for payment.");
+            document.querySelector('form').submit();
+        }
+    }
+
+    function validateCard() {
+        const cardName = document.getElementById('card-name').value.trim();
+        const cardNumber = document.getElementById('card-number').value.trim();
+        const expiry = document.getElementById('expiry').value.trim();
+        const cvv = document.getElementById('cvv').value.trim();
+
+        if (!cardName || !cardNumber || !expiry || !cvv) {
+            alert("Please fill in all card fields");
+            return false;
+        }
+        if (cardNumber.length !== 16 || isNaN(cardNumber)) {
+            alert("Card number must be 16 digits");
+            return false;
+        }
+        if (!/^\d{2}\/\d{2}$/.test(expiry)) {
+            alert("Expiry date must be in MM/YY format");
+            return false;
+        }
+        if (cvv.length !== 3 && cvv.length !== 4) {
+            alert("CVV must be 3 or 4 digits");
+            return false;
+        }
+        return true;
+    }
+
+    function payWithUPI() {
+        const upiId = document.getElementById("upi-id").value.trim();
+
+        if (!upiId) {
+            alert("Please enter a valid UPI ID");
+            return;
+        }
+
+        const amount = localStorage.getItem('cartTotal') || "100";
+        const name = encodeURIComponent("Test User");
+        const note = encodeURIComponent("Payment");
+
+        const upiUrl = `upi://pay?pa=${upiId}&pn=${name}&am=${amount}&cu=INR&tn=${note}`;
+
+        // Redirect to Google Pay / UPI app
+        window.location.href = upiUrl;
+    }
+
+    // Show/hide payment fields based on method
+    document.querySelectorAll('input[name="payment_method"]').forEach(function (radio) {
+        radio.addEventListener('change', function () {
+            document.getElementById('card-fields').style.display = this.value === 'card' ? 'block' : 'none';
+            document.getElementById('upi-fields').style.display = this.value === 'upi' ? 'block' : 'none';
+            if (this.value === 'product') {
+                updateAmount();
+            }
+        });
+    });
+
+    </script>
+</body>
+
+</html>
